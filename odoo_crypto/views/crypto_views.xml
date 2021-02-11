@@ -1,0 +1,96 @@
+<?xml version="1.0"?> 
+<odoo> 
+    <data>
+        <record id="view_form_crypto_info" model="ir.ui.view"> 
+            <field name="name">Crypto</field> 
+            <field name="model">crypto.info</field> 
+            <field name="arch" type="xml"> 
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="symbol"/> 
+ 
+                        </group>
+                        <notebook>
+                            <page string="Crypto Values"> 
+                                <field name="crypto_value_ids" nolabel="1" >
+                                    <tree>
+                                        <field name="value"/>
+                                        <field name="info_date"/>
+                                    </tree>
+                                </field>                       
+                            </page>  
+                        </notebook>
+                    </sheet>
+                </form> 
+            </field> 
+        </record>
+
+        <record id="view_tree_crypto_info" model="ir.ui.view"> 
+            <field name="name">Cryptos</field> 
+            <field name="model">crypto.info</field> 
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="symbol"/> 
+
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_crypto_info" model="ir.actions.act_window">
+            <field name="name">Cryptos</field>
+            <field name="res_model">crypto.info</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <b>Not cryptos available</b>...
+                </p>
+            </field>
+        </record>
+        
+        <record id="view_form_crypto_info_value" model="ir.ui.view"> 
+            <field name="name">Crypto Value</field> 
+            <field name="model">crypto.info.value</field> 
+            <field name="arch" type="xml"> 
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="crypto_id"/> 
+                            <field name="value"/> 
+                            <field name="info_date"/> 
+                        </group>
+                    </sheet>
+                </form> 
+            </field> 
+        </record>
+
+        <record id="view_tree_crypto_info_value" model="ir.ui.view"> 
+            <field name="name">Crypto Value</field> 
+            <field name="model">crypto.info.value</field> 
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="crypto_id"/>
+                    <field name="value"/>
+                    <field name="info_date"/> 
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_crypto_info_value" model="ir.actions.act_window">
+            <field name="name">Crypto Value</field>
+            <field name="res_model">crypto.info.value</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <b>Not values available</b>...
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

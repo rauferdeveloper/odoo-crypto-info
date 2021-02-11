@@ -13,13 +13,13 @@
     "license": "LGPL-3",
     'depends': ['base'],
     'data': [
-        #'security/security.xml',
         'security/ir.model.access.csv',
-        #'views/mk_doc_doc_view.xml',
-        #'views/mk_doc_area_view.xml',
-        #'views/mk_doc_category_view.xml',
-        #'views/menu_item.xml',
-        
+        'views/crypto_views.xml',
+        'views/res_users_views.xml',
+        'views/menu_item.xml',
+        'data/cron.xml',
+        'data/settings.xml'
+
     ],
     'demo': [],
     "qweb": [],
