@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        
+        <menuitem id="menu_item_principal_crypt_info"
+            name="Crypto Info"
+            action="odoo_crypto.action_crypto_info"
+            sequence="100"/>
+
+        <menuitem id="menu_item_crypto_info"
+            parent="menu_item_principal_crypt_info"
+            sequence="1" action="odoo_crypto.action_crypto_info"
+            name="Cryptos"/>
+        
+        <menuitem id="menu_item_crypto_info_values"
+            parent="menu_item_principal_crypt_info"
+            sequence="2" action="odoo_crypto.action_crypto_info_values"
+            name="Crypto Values"/>
+    </data>
+</odoo>
