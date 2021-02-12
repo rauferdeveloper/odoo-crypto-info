@@ -8,15 +8,15 @@
                 <form>
                     <sheet>
                         <group>
-                            <field name="name"/>
                             <field name="symbol"/> 
- 
+                            <field name="name"/>
                         </group>
                         <notebook>
                             <page string="Crypto Values"> 
                                 <field name="crypto_value_ids" nolabel="1" >
                                     <tree>
                                         <field name="value"/>
+                                        <field name="value_currency_user"/>
                                         <field name="info_date"/>
                                     </tree>
                                 </field>                       
@@ -32,10 +32,21 @@
             <field name="model">crypto.info</field> 
             <field name="arch" type="xml">
                 <tree>
-                    <field name="name"/>
                     <field name="symbol"/> 
-
+                    <field name="name"/>
                 </tree>
+            </field>
+        </record>
+
+        <!-- SEARCH VIEW -->
+        <record id="view_search_crypto_info" model="ir.ui.view">
+            <field name="name">view_search_crypto_info</field>
+            <field name="model">crypto.info</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="symbol"/>
+                </search>
             </field>
         </record>
 
@@ -60,7 +71,8 @@
                     <sheet>
                         <group>
                             <field name="crypto_id"/> 
-                            <field name="value"/> 
+                            <field name="value"/>
+                            <field name="value_currency_user"/>
                             <field name="info_date"/> 
                         </group>
                     </sheet>
@@ -75,14 +87,78 @@
                 <tree>
                     <field name="crypto_id"/>
                     <field name="value"/>
+                    <field name="value_currency_user"/>
                     <field name="info_date"/> 
                 </tree>
+            </field>
+        </record>
+
+        <!-- SEARCH VIEW -->
+        <record id="view_search_crypto_info_value" model="ir.ui.view">
+            <field name="name">view_search_crypto_info_value</field>
+            <field name="model">crypto.info.value</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="crypto_id"/>
+                    <group expand="0" string="Group by">
+                        <filter name="group_by_info_date" string="Info Date" context="{'group_by': 'info_date'}" />
+                        <filter name="group_by_crypto_id" string="Crypto" context="{'group_by': 'crypto_id'}" />
+                    </group>
+                </search>
             </field>
         </record>
 
         <record id="action_crypto_info_value" model="ir.actions.act_window">
             <field name="name">Crypto Value</field>
             <field name="res_model">crypto.info.value</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    <b>Not values available</b>...
+                </p>
+            </field>
+        </record>
+        
+        <record id="view_form_crypto_info_currency" model="ir.ui.view"> 
+            <field name="name">Crypto Currency</field> 
+            <field name="model">crypto.info.currency</field> 
+            <field name="arch" type="xml"> 
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="currency_id"/> 
+                            <field name="value"/>
+                        </group>
+                    </sheet>
+                </form> 
+            </field> 
+        </record>
+
+        <record id="view_tree_crypto_info_currency" model="ir.ui.view"> 
+            <field name="name">Crypto Currency</field> 
+            <field name="model">crypto.info.currency</field> 
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="currency_id"/> 
+                    <field name="value"/>
+                </tree>
+            </field>
+        </record>
+        <!-- SEARCH VIEW -->
+        <record id="view_search_crypto_info_currency" model="ir.ui.view">
+            <field name="name">view_search_crypto_info_currency</field>
+            <field name="model">crypto.info.currency</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="currency_id"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_crypto_info_currency" model="ir.actions.act_window">
+            <field name="name">Crypto Currency</field>
+            <field name="res_model">crypto.info.currency</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="domain">[]</field>

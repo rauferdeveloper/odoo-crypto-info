@@ -1,0 +1,199 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* odoo_crypto
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-12 10:42+0000\n"
+"PO-Revision-Date: 2021-02-12 10:42+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: odoo_crypto
+#: model_terms:ir.actions.act_window,help:odoo_crypto.action_crypto_info
+msgid "<b>Not cryptos available</b>..."
+msgstr "<b>No hay criptomonedas disponibles</b>..."
+
+#. module: odoo_crypto
+#: model_terms:ir.actions.act_window,help:odoo_crypto.action_crypto_info_currency
+#: model_terms:ir.actions.act_window,help:odoo_crypto.action_crypto_info_value
+msgid "<b>Not values available</b>..."
+msgstr "<b>No hay valores disponibles</b>..."
+
+#. module: odoo_crypto
+#: model:ir.model.fields,help:odoo_crypto.field_crypto_info_value__value
+msgid "Always in USD"
+msgstr "Siempre en USD"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info__create_uid
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_currency__create_uid
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_value__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info__create_date
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_currency__create_date
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_value__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_value__crypto_id
+#: model_terms:ir.ui.view,arch_db:odoo_crypto.view_search_crypto_info_value
+msgid "Crypto"
+msgstr "Cripto"
+
+#. module: odoo_crypto
+#: model:ir.ui.menu,name:odoo_crypto.menu_item_crypto_info_currencies
+msgid "Crypto Currencies"
+msgstr "Monedas"
+
+#. module: odoo_crypto
+#: model:ir.actions.act_window,name:odoo_crypto.action_crypto_info_currency
+msgid "Crypto Currency"
+msgstr "Moneda"
+
+#. module: odoo_crypto
+#: model:ir.model,name:odoo_crypto.model_crypto_info
+#: model:ir.ui.menu,name:odoo_crypto.menu_item_principal_crypt_info
+msgid "Crypto Info"
+msgstr "Información de Criptos"
+
+#. module: odoo_crypto
+#: model:ir.model,name:odoo_crypto.model_crypto_info_currency
+msgid "Crypto Info Currency"
+msgstr "Información de Criptomonedas"
+
+#. module: odoo_crypto
+#: model:ir.model,name:odoo_crypto.model_crypto_info_value
+msgid "Crypto Info Value"
+msgstr "Valores de las Criptos"
+
+#. module: odoo_crypto
+#: model:ir.actions.act_window,name:odoo_crypto.action_crypto_info_value
+msgid "Crypto Value"
+msgstr "Valores de las criptos"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info__crypto_value_ids
+#: model:ir.ui.menu,name:odoo_crypto.menu_item_crypto_info_values
+#: model_terms:ir.ui.view,arch_db:odoo_crypto.view_form_crypto_info
+msgid "Crypto Values"
+msgstr "Valores de las criptos"
+
+#. module: odoo_crypto
+#: model:ir.actions.server,name:odoo_crypto.ir_cron_crypto_info_day_ir_actions_server
+#: model:ir.cron,cron_name:odoo_crypto.ir_cron_crypto_info_day
+#: model:ir.cron,name:odoo_crypto.ir_cron_crypto_info_day
+msgid "Crypto info diary"
+msgstr "Información diaria de las criptos"
+
+#. module: odoo_crypto
+#: model:ir.actions.server,name:odoo_crypto.ir_cron_crypto_info_minutes_ir_actions_server
+#: model:ir.cron,cron_name:odoo_crypto.ir_cron_crypto_info_minutes
+#: model:ir.cron,name:odoo_crypto.ir_cron_crypto_info_minutes
+msgid "Crypto info minutes"
+msgstr "Informacion de las criptos por minutos"
+
+#. module: odoo_crypto
+#: model:ir.actions.act_window,name:odoo_crypto.action_crypto_info
+#: model:ir.ui.menu,name:odoo_crypto.menu_item_crypto_info
+msgid "Cryptos"
+msgstr "Criptos"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_currency__currency_id
+#: model:ir.model.fields,field_description:odoo_crypto.field_res_users__currency_id
+msgid "Currency"
+msgstr "Moneda"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info__display_name
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_currency__display_name
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_value__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info__external_id
+msgid "External ID"
+msgstr "ID externo"
+
+#. module: odoo_crypto
+#: model_terms:ir.ui.view,arch_db:odoo_crypto.view_search_crypto_info_value
+msgid "Group by"
+msgstr "Agrupar por"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info__id
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_currency__id
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_value__id
+msgid "ID"
+msgstr "ID"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_value__info_date
+#: model_terms:ir.ui.view,arch_db:odoo_crypto.view_search_crypto_info_value
+msgid "Info Date"
+msgstr "Fecha de información"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info____last_update
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_currency____last_update
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_value____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info__write_uid
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_currency__write_uid
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_value__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info__write_date
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_currency__write_date
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_value__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info__symbol
+msgid "Symbol"
+msgstr "Símbolo"
+
+#. module: odoo_crypto
+#: model:ir.model,name:odoo_crypto.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_currency__value
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_value__value
+msgid "Value"
+msgstr "Valor"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,field_description:odoo_crypto.field_crypto_info_value__value_currency_user
+msgid "Value Currency"
+msgstr "Valor Moneda Usuario"
+
+#. module: odoo_crypto
+#: model:ir.model.fields,help:odoo_crypto.field_crypto_info_value__value_currency_user
+msgid "Value in your currency"
+msgstr "Valor según tu moneda"
+

@@ -7,11 +7,11 @@
     'description': """
         Crypto info diary
     """,
-    "category": "Generic Modules",
+    "category": "Tools",
     "website": "",
-    "author": "Raul",
+    "author": "Raúl Fernández",
     "license": "LGPL-3",
-    'depends': ['base'],
+    'depends': ['base', 'mail'],
     'data': [
         'security/ir.model.access.csv',
         'views/crypto_views.xml',

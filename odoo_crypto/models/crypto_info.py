@@ -21,6 +21,24 @@ class CryptoInfo(models.Model):
         inverse_name="crypto_id"
 
     )
+    
+    @api.depends('name', 'symbol')
+    def _compute_display_name(self):
+        super(CryptoInfo, self)._compute_display_name()
+    
+    @api.multi
+    def name_get(self):
+        try:
+            res = []
+            for value in self:
+                res.append((value.id, "({}) {}".format(value.symbol, value.name)))
+            return res
+        except:
+            return super(CryptoInfo, self).name_get()
+    
+    @api.onchange('name', 'symbol')
+    def _onchange_display_name(self):
+        self._compute_display_name()
 
     def cron_crypto_info(self):
         model_obj = self.env[self._name]
@@ -65,7 +83,6 @@ class CryptoInfo(models.Model):
                     'info_date': fields.Datetime.now(),
                     'value': dat['price_usd']
                 }
-                logging.error(value_info)
                 value_model.write({'crypto_value_ids': [(0, 0, value_info)]}) 
             except Exception as exc:
                 logging.error(exc)
@@ -88,19 +105,19 @@ class CryptoInfoValue(models.Model):
         digits=(20,6),
         help='Always in USD'
     )
-    """value_currency_user = fields.Float(
+    value_currency_user = fields.Float(
         string="Value Currency",
         digits=(20,6),
         help='Value in your currency',
         compute='_compute_currency_user'
     )
     
-
+    @api.multi
     def _compute_currency_user(self):
         currency_user = self.env.user.currency_id
-        currency_usd = self.env['res.currency'].search([('name', '=', 'USD')])
+        currency_converter = self.env['crypto.info.currency'].search([('currency_id', '=', currency_user.id)])
         for value in self:
-            value.value_currency_user = currency_usd.with_context(date=value.info_date.date()).compute(value.value, currency_user.id)"""
+            value.value_currency_user = round(value.value * currency_converter.value, 6)
     
     @api.model
     def fields_view_get(self, view_id=None, view_type='form',
@@ -117,3 +134,17 @@ class CryptoInfoValue(models.Model):
             res['arch'] = etree.tostring(root)
         return res
 
+
+class CryptoInfoCurrency(models.Model):
+
+    _name = "crypto.info.currency"
+    _description = "Crypto Info Currency"
+
+    currency_id = fields.Many2one(
+        comodel_name="res.currency",
+        string="Currency",
+    )
+    value = fields.Float(
+        string="Value",
+    )
+   

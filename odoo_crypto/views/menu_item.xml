@@ -17,5 +17,10 @@
             parent="menu_item_principal_crypt_info"
             sequence="2" action="action_crypto_info_value"
             name="Crypto Values"/>
+        
+        <menuitem id="menu_item_crypto_info_currencies"
+            parent="menu_item_principal_crypt_info"
+            sequence="3" action="action_crypto_info_currency"
+            name="Crypto Currencies"/>
     </data>
 </odoo>

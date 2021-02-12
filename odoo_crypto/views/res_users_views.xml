@@ -8,7 +8,7 @@
             <field name="arch" type="xml">
             <data>
                 <field name="tz" position="after">
-                    
+                    <field name="currency_id"/>
                 </field>
             </data>
             </field>
